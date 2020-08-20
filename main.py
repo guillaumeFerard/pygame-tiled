@@ -1,7 +1,8 @@
 # Pygame template - skeleton for a new pygame project
-import pygame
 import random
 import os
+import pygame
+
 
 
 WIDTH = 800
@@ -31,7 +32,9 @@ class Player(pygame.sprite.Sprite):
         self.rect.bottom = HEIGHT - 10
         self.y_speed = 0
     
+
     def update(self):
+        """hi"""
         self.speedx = 0
         keystatus = pygame.key.get_pressed()
         if keystatus[pygame.K_LEFT]:
@@ -83,10 +86,10 @@ class Bullet(pygame.sprite.Sprite):
         self.speedy = -10
 
     def update(self):
-            self.rect.y += self.speedy
-            # kill if it moves of the top of the screen
-            if self.rect.bottom<0:
-                self.kill()
+        self.rect.y += self.speedy
+        # kill if it moves of the top of the screen
+        if self.rect.bottom < 0:
+            self.kill()
 
 
 
@@ -99,7 +102,6 @@ class Bullet(pygame.sprite.Sprite):
 #            self.y_speed = 5
 #        if self.rect.x > WIDTH: # if sprite leave the screen on x it restart to the left
 #            self.rect.x = 0
-
 
 
 
